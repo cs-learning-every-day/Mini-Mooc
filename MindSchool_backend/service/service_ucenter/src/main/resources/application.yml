@@ -1,0 +1,49 @@
+server:
+  port: 8150
+
+
+spring:
+  application:
+    name: service-ucenter
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.103:8848
+
+
+  profiles:
+    active: dev
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.10.103:12345/mymooc?serverTimezone=GMT%2B8
+    username: root
+    password: sfy1314
+  #redis\u914D\u7F6E
+  redis:
+    host: 192.168.10.103
+    port: 6379
+    timeout: 180000
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+# mybatis\u65E5\u5FD7
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  mapper-locations: classpath:com/xmchx/eduucenter/mapper/xml/*.xml
+
+feign:
+  hystrix:
+    enabled: true
+
+
+
+wx:
+  open:
+    appId: wxed9954c01bb89b47
+    appSecret: a7482517235173ddb4083788de60b90e
+    redirectUrl: http://guli.shop/api/ucenter/wx/callback

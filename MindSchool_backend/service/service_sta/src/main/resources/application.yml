@@ -1,0 +1,40 @@
+## 服务器端口
+#server:
+#  port: 8008
+#
+#
+## 服务名
+#spring:
+#  application:
+#    name: service-sta
+#  # nacos服务地址
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.1.13:8848
+#
+#
+#  # 数据库连接
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.1.13:12345/mymooc?serverTimezone=GMT%2B8
+#    username: root
+#    password: sfy1314
+#
+#
+#  # 返回json的全局时间格式
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#
+## mybatis日志
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#
+#  mapper-locations: classpath:com/xmchx/edusta/mapper/xml/*.xml
+#
+##开启熔断机制
+#feign:
+#  hystrix:
+#    enabled: true

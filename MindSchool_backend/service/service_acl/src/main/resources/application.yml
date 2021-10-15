@@ -1,0 +1,37 @@
+server:
+  port: 8009
+
+spring:
+  application:
+    name: service-acl
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.103:8848
+
+  profiles:
+    active: dev
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.10.103:12345/mymooc?serverTimezone=GMT%2B8
+    username: root
+    password: sfy1314
+  redis:
+    host: 192.168.10.103
+    port: 6379
+
+    timeout: 180000
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  mapper-locations: classpath:com/xmchx/aclservice/mapper/xml/*.xml
+feign:
+  hystrix:
+    enabled: true

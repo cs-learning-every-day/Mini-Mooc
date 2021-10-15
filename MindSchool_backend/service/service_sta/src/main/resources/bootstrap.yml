@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: service-sta
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        namespace: 697b04f7-60f1-4566-aef5-96f8dc04cf98
+        server-addr: 192.168.10.103:8848
+        ext-config:
+          - dataId: port.yml
+#            修改文件时，会重新加载
+            refresh: true
+
+  profiles:
+    active: dev
